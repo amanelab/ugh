@@ -20,7 +20,7 @@ Install
 If you get this module as a ZIP archive just unzip it. You can place
 this package wherever you want.
 
-If you get it as source code, make it and put the package where you
+If you get it as source code, build it and put the package where you
 want.
 
 Usage

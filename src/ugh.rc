@@ -1,0 +1,64 @@
+/*-
+ * This file is part of Ugh project. For license details, see the file
+ * 'LICENSE' in this package.
+ */
+#include "winuser.h"
+#include "resource.h"
+
+/*
+** Resource Manifest
+*/
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "res/ugh.exe.manifest"
+
+/*
+** File Version
+*/
+
+1 VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "040904B0"
+        {
+            VALUE "CompanyName",         "AMANE Engineering Lab.\0"
+            VALUE "FileDescription",     "Ugh - The screen saver stopper\0"
+            VALUE "FileVersion",         "0.0.1\0"
+            VALUE "LegalCopyright",      "2023 AMANE Engineering Lab. All Rights Reserved.\0"
+            VALUE "OriginalFileName",    "ugh.exe\0"
+            VALUE "ProductName",         "Ugh\0"
+            VALUE "ProductVersion",      "0.0.1\0"
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x409, 1200
+    }
+}
+
+/*
+** Icon
+**
+** Icon with lowest ID value placed first to ensure application icon
+** remains consistent on all systems.
+*/
+
+IDI_APP             ICON                    "res/app.ico"
+IDI_TRAY_COLOR      ICON                    "res/tray-color.ico"
+IDI_TRAY_GRAY       ICON                    "res/tray-gray.ico"
+
+/*
+** Dialog
+*/
+
+IDD_MAIN DIALOGEX 0, 0, 200, 100
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+FONT 8, "Tahoma"
+BEGIN
+    LTEXT              "Interval:", IDC_STATIC, 35, 5, 30, 10, SS_NOPREFIX
+    LTEXT              "min", IDC_STATIC, 90, 5, 35, 10, SS_NOPREFIX
+    EDITTEXT           IDC_EDIT_INTERVAL, 70, 4, 15, 10, ES_RIGHT | ES_NUMBER
+    PUSHBUTTON         "Turn OFF", IDC_BUTTON_ACTIVATE, 5, 20, 130, 15
+END
